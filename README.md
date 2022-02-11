@@ -8,13 +8,13 @@ train_model.py script was used to perform model profiling and debugging. The fun
 
 reference.py script used as entry point for model deployment makes it possible for data(image) to be passed to the endpoint for testing
 
-##Dataset
+## Dataset
 We use the provided Dog Breed Dataset to use as data for the training jobs
 
-##Project pipeline
+## Project pipeline
 The notebook environment is prepared by installing all the required dependencies, the dataset is downloaded, unziped and loaded to S3 Training
 
-##Hyperparamter tuning
+## Hyperparamter tuning
 For this project, I used ResNet18 model. Among other pre-trained models, ResNet(18) model is popularly used and it is suitable for the system i am using. It provides a fair balance between the model accuracy to the number of operations needed to excecute. Though ResNet18 model might tend to have a lower accuracy, It is comparably faster to train with than ResNet 34 completed training job. i also used epoch 50.
 ![pytorch](https://user-images.githubusercontent.com/86266982/153577404-22796787-a4af-452f-8fc9-f6b635f1852c.JPG)
 
@@ -24,13 +24,13 @@ Log metrics of the training process
 The two parameters tuned where the batch size and learning rate
 ![hyper tuning](https://user-images.githubusercontent.com/86266982/153577863-b081a384-fac5-4df8-9b62-4a3847110cf5.JPG)
 
-##Debugging and Profiling
+## Debugging and Profiling
 The Debugger Hook was set to record the Loss Criterion of the process in both training and validation/testing. 
 
-##Result
+## Result
 ![train](https://user-images.githubusercontent.com/86266982/153578222-601c9b5c-b60e-4924-aafe-d1197aa311b0.JPG)
 
-##Model Deployment
+## Model Deployment
 ![end pointtt](https://user-images.githubusercontent.com/86266982/153578794-1acc5e41-f81c-4280-9d32-85f5335e76ef.JPG)
 
 After successfully carrying out the training job with the best hyperparameter available, I called for deployment with pytorch_model.deploy(). I also run a prediction on the endpoint.
